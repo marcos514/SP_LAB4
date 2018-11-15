@@ -15,7 +15,10 @@
     </div>
     <div class="input">
       <mat-form-field class="fill">
-        <input type="text" matInput placeholder="Apellido" name="apellido"[(ngModel)]="apellido" required>
+        <mat-select [(value)]="tipo">
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Cliente">Cliente</mat-option>
+          </mat-select>
       </mat-form-field>
     </div>
     <div class="input">

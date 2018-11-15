@@ -11,22 +11,15 @@ export class ServerService {
   constructor(private http:HttpClient) { }
   public LogIn(email,pass)
   {
-    return this.http.post("./../../assets/Api_Juegos/usuario/login",
-    {
-      mail:email,
-      clave:pass
-    });
+    let usr = '{"nombre":"'+email+'","pass":"'+pass+'"}';
+
+    return this.http.post("./../../assets/Api_Juegos/usuario/login",{usr});
   }
 
   public SignUp(nombre:string,apellido:string,email:string,pass:string)
   {
-    return this.http.post("./../../assets/Api_Juegos/usuario/signup",
-    {
-        nombre:nombre,
-        apellido:apellido,
-        mail:email,
-        clave:pass
-    });
+    let usr = '{"nombre":"'+nombre+'","email":"'+email+'","pass":"'+pass+'"}';
+    return this.http.post("./../../assets/Api_Juegos/usuario/signup",{usr});
   }
 
   public AgregarPuntuacion(juego:string, puntuacion:string)

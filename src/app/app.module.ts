@@ -19,6 +19,7 @@ import { PalabrasComponent } from './components/juegos/palabras/palabras.compone
 import { InicioComponent } from './inicio/inicio.component';
 import { PuntuacionesComponent } from './puntuaciones/puntuaciones.component';
 import { SalirComponent } from './salir/salir.component';
+import { AutoComponent } from './components/auto/auto.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SalirComponent } from './salir/salir.component';
     PalabrasComponent,
     InicioComponent,
     PuntuacionesComponent,
-    SalirComponent
+    SalirComponent,
+    AutoComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSortModule} from '@angular/material/sort';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
-  imports: [MatSortModule,MatProgressBarModule,MatSnackBarModule,MatGridListModule,MatTableModule,MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatInputModule],
-  exports: [MatSortModule,MatProgressBarModule,MatSnackBarModule,MatGridListModule,MatTableModule,MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatInputModule],
+  imports: [MatSelectModule,MatRadioModule,MatSortModule,MatProgressBarModule,MatSnackBarModule,MatGridListModule,MatTableModule,MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatInputModule],
+  exports: [MatSelectModule,MatRadioModule,MatSortModule,MatProgressBarModule,MatSnackBarModule,MatGridListModule,MatTableModule,MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatInputModule],
 })
 export class MaterialsModule { }
