@@ -31,22 +31,16 @@ export class SignupComponent implements OnInit {
       this.noPass();
       return 0;
     }
-    if(!this.nombre)
+    if (!this.nombre) 
     {
-      this.faltaCampos();
+      this.noPass();
       return 0;
     }
 
-    this.http.SignUp(this.nombre,this.apellido,this.email,this.password).subscribe(data=>{
-      console.log(data);
-      localStorage.setItem("Token",data["token"]);
-      this.router.navigate(["/cargarAuto"]);
-
+    this.http.SignUp(this.nombre,this.email,this.password,this.tipo).subscribe(data=>{
+      this.router.navigate(["/login"]);
     },
     err=>{console.log(err);});
-    if(localStorage.getItem("Token")){
-      
-    }
     return 0;
     
    }

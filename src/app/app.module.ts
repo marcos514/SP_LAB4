@@ -20,6 +20,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PuntuacionesComponent } from './puntuaciones/puntuaciones.component';
 import { SalirComponent } from './salir/salir.component';
 import { AutoComponent } from './components/auto/auto.component';
+import { SacarTurnoComponent } from './components/sacar-turno/sacar-turno.component';
+import { VerTurnosComponent } from './components/ver-turnos/ver-turnos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { AutoComponent } from './components/auto/auto.component';
     InicioComponent,
     PuntuacionesComponent,
     SalirComponent,
-    AutoComponent
+    AutoComponent,
+    SacarTurnoComponent,
+    VerTurnosComponent
   ],
   imports: [
     BrowserModule,

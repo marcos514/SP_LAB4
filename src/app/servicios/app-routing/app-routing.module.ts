@@ -9,7 +9,9 @@ import { MathComponent} from "../../components/juegos/math/math.component";
 import { PalabrasComponent} from "../../components/juegos/palabras/palabras.component";
 import { TatetiComponent} from "../../components/juegos/tateti/tateti.component";
 import { SalirComponent} from "../../salir/salir.component";
-
+import { AutoComponent } from "../../components/auto/auto.component";
+import { SacarTurnoComponent } from "../../components/sacar-turno/sacar-turno.component";
+import { VerTurnosComponent } from "../../components/ver-turnos/ver-turnos.component";
 import { ConeccionService } from "../coneccion.service";
  
 const rutas : Routes =[
@@ -22,6 +24,9 @@ const rutas : Routes =[
   {path:"palabras",component:PalabrasComponent,canActivate:[ConeccionService]},
   {path:"math",component:MathComponent,canActivate:[ConeccionService]},
   {path:"inicio",component:InicioComponent,canActivate:[ConeccionService]},
+  {path:"cargar",component:AutoComponent,canActivate:[ConeccionService]},
+  {path:"sacarTurno",component:SacarTurnoComponent,canActivate:[ConeccionService]},
+  {path:"verTurno",component:VerTurnosComponent,canActivate:[ConeccionService]},
 ];
 
 @NgModule({

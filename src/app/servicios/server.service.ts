@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 const CONFIG={headers:new HttpHeaders({token:localStorage.getItem("Token")})};
@@ -11,24 +11,54 @@ export class ServerService {
   constructor(private http:HttpClient) { }
   public LogIn(email,pass)
   {
-    let usr = '{"nombre":"'+email+'","pass":"'+pass+'"}';
-
-    return this.http.post("./../../assets/Api_Juegos/usuario/login",{usr});
+    return this.http.post("http://192.168.2.42:3003/login",{cliente:{
+      user:email,
+      pass:pass,
+    }});
   }
 
-  public SignUp(nombre:string,apellido:string,email:string,pass:string)
+  public SignUp(nombre,email,clave,tipo)
   {
-    let usr = '{"nombre":"'+nombre+'","email":"'+email+'","pass":"'+pass+'"}';
-    return this.http.post("./../../assets/Api_Juegos/usuario/signup",{usr});
-  }
-
-  public AgregarPuntuacion(juego:string, puntuacion:string)
-  {
-    return this.http.post("./../../assets/Api_Juegos/puntuacion",
+    return this.http.post("http://192.168.2.42:3003/clientes",{cliente:
     {
-        juego:juego,
-        puntuacion:puntuacion
+      nombre:nombre,
+      user:email,
+      pass:clave,
+      tipo:tipo
+
+    }});
+  }
+
+  public AgregarAuto(patente,marca,color,kilometros,tipo,usuario)
+  {
+    return this.http.post("http://192.168.2.42:3003/auto",
+    {
+        auto:{
+          patente:patente,
+          marca:marca,
+          color:color,
+          kilometros:kilometros,
+          tipo:tipo,
+          usuario:usuario,
+        }
     },CONFIG);
+  }
+  public AgregarTurno(dia,horario,mail,patente)
+  {
+    return this.http.post("http://192.168.2.42:3003/turnos",
+    {
+      turno:{
+          dia:dia,
+          horario:horario,
+          mail:mail,
+          patente:patente
+        }
+    },CONFIG);
+  }
+
+  public TomarTurno()
+  {
+    return this.http.get("http://192.168.2.42:3003/turnos",CONFIG);
   }
 
   public TomarPuntuacion()

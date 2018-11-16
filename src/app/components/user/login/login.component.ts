@@ -12,7 +12,7 @@ import { ServerService } from "../../../servicios/server.service";
 export class LoginComponent implements OnInit {
   email="";
   password="";
-  constructor(public snackBar: MatSnackBar,private http:ServerService) {}
+  constructor(public snackBar: MatSnackBar,private http:ServerService,private router:Router) {}
 
   mailMal() {
     /*this.snackBar.open(msn,icono, {
@@ -43,11 +43,12 @@ export class LoginComponent implements OnInit {
       {
         this.http.LogIn(this.email,this.password).subscribe(data=>{
           console.log(data);
-          localStorage.setItem("Token",data.toString());
+          localStorage.setItem("Token",data["token"]);
+      this.router.navigate(["/cargar"]);
+
+
         },
-        err=>{this.snackBar.open(err,"", {
-          duration: 2000,
-        });console.log(err);})
+        err=>{console.log(err);})
         return 0;
       } 
       else 
