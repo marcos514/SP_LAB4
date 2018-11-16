@@ -1,12 +1,11 @@
 <div *ngIf="tipo">
-  <mat-grid-list cols="9" rowHeight="100px">
+  <mat-grid-list cols="1" rowHeight="100px">
     <mat-grid-tile class="mostrar2"
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color"
-        (click)="marcar(tile.x,tile.y,tile.text)">
-      {{tile.text}}
+        *ngFor="let turno of clienteArr"
+        [colspan]=1
+        [rowspan]=1
+        [style.background]="red">
+        {{turno.dia}} -- {{turno.hora}} -- {{turno.patente}} --
     </mat-grid-tile>
   </mat-grid-list>
 </div>

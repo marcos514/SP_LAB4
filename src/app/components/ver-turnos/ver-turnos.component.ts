@@ -5,6 +5,7 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 
 export interface ClienteServ {
   dia: string;
+  hora: string;
   patente: string;
 }
 @Component({
@@ -20,6 +21,7 @@ export class VerTurnosComponent implements OnInit {
   clienteArr:ClienteServ[];
 
   ngOnInit() {
+    this.clienteArr=[];
     if(localStorage.getItem("Token")){
       let token = this.helper.decodeToken(localStorage.getItem("Token"));
       this.tipo=token.tipo = "Cliente";
@@ -28,12 +30,13 @@ export class VerTurnosComponent implements OnInit {
     this.http.TomarTurno().subscribe(data=>{
       console.log(data["rta"]);
       for (let index = 0; index < data["rta"].length; index++) {
-        let hora:string=data["rta"][index].hora;
+        let hora:string=data["rta"][index].horario;
         let dia:string=data["rta"][index].dia;
         let patente:string=data["rta"][index].patente;
         this.clienteArr.push({hora: hora ,dia: dia,patente: patente});
         
       }
+      console.log(this.clienteArr)
     },
     err=>{console.log(err);})
   }
