@@ -61,6 +61,10 @@ export class ServerService {
     return this.http.get("http://192.168.2.42:3003/turnos",CONFIG);
   }
 
+  public GetAutos()
+  {
+    return this.http.get("http://192.168.2.42:3003/autos",CONFIG);
+  }
   public TomarPuntuacion()
   {
     return this.http.get("./../../assets/Api_Juegos/puntuacion",CONFIG);

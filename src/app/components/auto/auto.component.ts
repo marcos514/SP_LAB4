@@ -9,20 +9,24 @@ import {JwtHelperService} from "@auth0/angular-jwt";
   styleUrls: ['./auto.component.css']
 })
 export class AutoComponent implements OnInit {
-
-  constructor(private http:ServerService,private router:Router) { }
-  helper=new JwtHelperService();
-
+  tipo="Auto";
   patente="";
   marca="";
   color="";
   kilometros:Number;
-  tipo="auto";
   usuario="";
-  agrego=""
+  agrego="";
+  constructor(private http:ServerService,private router:Router) { }
+  helper=new JwtHelperService();
+
+  
 
   Cargar(){
-    this.http.AgregarAuto(this.patente,this.marca,this.color,this.kilometros,this.tipo,this.usuario).subscribe(data=>{
+    console.log(this);
+    if(!this.marca||!this.patente||!this.color){
+      return 0;
+    }
+    /*this.http.AgregarAuto(this.patente,this.marca,this.color,this.kilometros,this.tipo,this.usuario).subscribe(data=>{
       console.log(data);
       this.router.navigate(["/cargar"]);
       this.ngOnInit();
@@ -30,7 +34,8 @@ export class AutoComponent implements OnInit {
     },
     err=>{console.log(err);
     this.agrego="Error"})
-
+*/
+      console.log(this);
   }
 
   ngOnInit() {

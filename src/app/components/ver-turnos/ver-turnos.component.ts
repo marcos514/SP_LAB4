@@ -24,7 +24,7 @@ export class VerTurnosComponent implements OnInit {
     this.clienteArr=[];
     if(localStorage.getItem("Token")){
       let token = this.helper.decodeToken(localStorage.getItem("Token"));
-      this.tipo=token.tipo = "Cliente";
+      this.tipo=token.tipo;
       this.mail=token.user;
     }
     this.http.TomarTurno().subscribe(data=>{

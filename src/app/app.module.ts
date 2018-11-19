@@ -22,6 +22,10 @@ import { SalirComponent } from './salir/salir.component';
 import { AutoComponent } from './components/auto/auto.component';
 import { SacarTurnoComponent } from './components/sacar-turno/sacar-turno.component';
 import { VerTurnosComponent } from './components/ver-turnos/ver-turnos.component';
+import { DatosUsuarioComponent } from './components/user/datos-usuario/datos-usuario.component';
+import { NombreComponent } from './components/user/nombre/nombre.component';
+import { CambiarComponent } from './components/user/cambiar/cambiar.component';
+import { CambiarAdminComponent } from './components/user/cambiar-admin/cambiar-admin.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { VerTurnosComponent } from './components/ver-turnos/ver-turnos.component
     SalirComponent,
     AutoComponent,
     SacarTurnoComponent,
-    VerTurnosComponent
+    VerTurnosComponent,
+    DatosUsuarioComponent,
+    NombreComponent,
+    CambiarComponent,
+    CambiarAdminComponent
   ],
   imports: [
     BrowserModule,
