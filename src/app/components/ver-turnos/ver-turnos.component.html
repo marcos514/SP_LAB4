@@ -1,15 +1,22 @@
-<div *ngIf="tipo">
+<div class="input">
+    <div>
   <mat-grid-list cols="1" rowHeight="10px">
     <mat-grid-tile class="mostrar2"
         *ngFor="let turno of clienteArr"
         [colspan]=1
         [rowspan]=1
         [style.background]="red">
-        {{turno.dia}} -- {{turno.hora}} -- {{turno.patente}} --
+        {{turno.dia}} -- {{turno.hora}} -- {{turno.mail}} --
     </mat-grid-tile>
   </mat-grid-list>
 </div>
 
 <div *ngIf="!tipo">
+        <div class="example-button-row">
+            <button class="boton"mat-raised-button type="reset" style="width: 50%; background-color:#f57474;color:black" value="Reset" >Limpiar</button>
+            <button (click)="Logearse()" class="boton" mat-raised-button style="width: 50%; background-color:#70f6af;color:black">Aceptar</button>
+            <a href="/signup" mat-raised-button class="boton" style="width: 100%; background-color:#9cbefc;color:black" >Sign Up</a>
+        </div>
 
+</div>
 </div>

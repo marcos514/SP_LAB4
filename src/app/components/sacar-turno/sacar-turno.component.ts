@@ -14,7 +14,6 @@ export class SacarTurnoComponent implements OnInit {
   helper=new JwtHelperService();
   autos;
   agrego="";
-  patente="";
   dia;
   horario;
   mail="";
@@ -24,16 +23,12 @@ export class SacarTurnoComponent implements OnInit {
       this.agrego="Fecha Invalida";
       return 0;
     }
-    if(!this.patente){
-      this.agrego="Agregar Patente";
-      return 0;
-    }
     if(!this.horario){
       this.agrego="Agregar Horario";
       return 0;
     }
     
-    this.http.AgregarTurno(this.dia,this.horario,this.mail,this.patente).subscribe(data=>{
+    this.http.AgregarTurno(this.dia,this.horario,this.mail).subscribe(data=>{
       console.log(data);
       this.ngOnInit();
       this.agrego="Agrego";

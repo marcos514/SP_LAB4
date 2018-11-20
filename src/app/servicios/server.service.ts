@@ -43,15 +43,14 @@ export class ServerService {
         }
     },CONFIG);
   }
-  public AgregarTurno(dia,horario,mail,patente)
+  public AgregarTurno(dia,horario,mail)
   {
     return this.http.post("http://192.168.2.42:3003/turnos",
     {
       turno:{
           dia:dia,
           horario:horario,
-          mail:mail,
-          patente:patente
+          mail:mail
         }
     },CONFIG);
   }

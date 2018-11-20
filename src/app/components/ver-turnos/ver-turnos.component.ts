@@ -5,8 +5,8 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 
 export interface ClienteServ {
   dia: string;
+  mail: string;
   hora: string;
-  patente: string;
 }
 @Component({
   selector: 'app-ver-turnos',
@@ -14,31 +14,48 @@ export interface ClienteServ {
   styleUrls: ['./ver-turnos.component.css']
 })
 export class VerTurnosComponent implements OnInit {
-  tipo="";
+  tipo;
   constructor(private http:ServerService,private router:Router) { }
   helper=new JwtHelperService();
   mail="";
   clienteArr:ClienteServ[];
-
+  mostrarArr:ClienteServ[];
+  palabraBuscar;
   ngOnInit() {
     this.clienteArr=[];
     if(localStorage.getItem("Token")){
       let token = this.helper.decodeToken(localStorage.getItem("Token"));
-      this.tipo=token.tipo;
+      this.tipo=token.tipo == "Cliente";
       this.mail=token.user;
     }
     this.http.TomarTurno().subscribe(data=>{
-      console.log(data["rta"]);
       for (let index = 0; index < data["rta"].length; index++) {
         let hora:string=data["rta"][index].horario;
         let dia:string=data["rta"][index].dia;
-        let patente:string=data["rta"][index].patente;
-        this.clienteArr.push({hora: hora ,dia: dia,patente: patente});
+        let mail:string=data["rta"][index].mail;
+        this.clienteArr.push({hora: hora,mail: mail ,dia: dia});
         
       }
-      console.log(this.clienteArr)
+      this.mostrarArr=this.clienteArr;
     },
     err=>{console.log(err);})
+  }
+
+  Filtrar()
+  {
+    if(!this.palabraBuscar){
+      this.mostrarArr=[];
+      for (let index = 0; index < this.clienteArr.length; index++) {
+        if(this.clienteArr[index].mail){
+          this.mostrarArr.push(this.clienteArr[index]);
+        }
+        
+      }
+    }
+    else{
+      this.mostrarArr=this.clienteArr;
+    }
+
   }
 
 }
