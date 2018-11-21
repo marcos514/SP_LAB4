@@ -18,8 +18,9 @@ export class SacarTurnoComponent implements OnInit {
   horario;
   mail="";
   tipo="";
+  patente;
   Cargar(){
-    if(this.FechaValidar()){
+    if(!this.FechaValidar()){
       this.agrego="Fecha Invalida";
       return 0;
     }
@@ -27,10 +28,12 @@ export class SacarTurnoComponent implements OnInit {
       this.agrego="Agregar Horario";
       return 0;
     }
-    
-    this.http.AgregarTurno(this.dia,this.horario,this.mail).subscribe(data=>{
+    if(!this.patente){
+      this.agrego="Agregar Horario";
+      return 0;
+    }
+    this.http.AgregarTurno(this.dia,this.horario,this.patente,this.mail).subscribe(data=>{
       console.log(data);
-      this.ngOnInit();
       this.agrego="Agrego";
     },
     err=>{console.log(err);
@@ -45,23 +48,25 @@ export class SacarTurnoComponent implements OnInit {
   }
 
   Mail(event){
+    console.log(event)
     this.mail=event;
   }
 
   ngOnInit() {
-    this.http.GetAutos().subscribe(data=>{
+  /*  this.http.GetAutos().subscribe(data=>{
+      console.log(data);
       this.autos=data;
     },
     err=>{console.log(err);
     this.agrego="Error"})
-
+*/
     this.agrego=""
   }
   FechaValidar(){
     let d = new Date();
     let d2 = new Date (this.dia);
     console.log(d.getDate() < d2.getDate())
-    if(d.getDate() < d2.getDate()){
+    if(d.getDate() < d2.getDate()&& d.getFullYear() < d2.getFullYear() && d.getMonth() < d2.getMonth()){
       return false;
     }
     return true;

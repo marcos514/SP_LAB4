@@ -10,7 +10,7 @@ export class CambiarComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    localStorage.setItem("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWlsIjoibWFyQGdtYWlsLmNvbSIsInRpcG8iOiJDbGllbnRlIiwibm9tYnJlIjoiSm9obiBEb2UiLCJpYXQiOjE4MTcyMzkwMjJ9.7saLuoAenGd5XIZujRFXfEfITJRQvgo0DsbxvFLg3dc");
+    localStorage.setItem("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmY1YjUyMTFiMTgzNDA2MTRhY2FlMWEiLCJub21icmUiOiJNYXJtYXIiLCJ1c2VyIjoibWFyY29zQGdtYWlsLmFyIiwicGFzcyI6IjEyMzQiLCJ0aXBvIjoiQ2xpZW50ZSIsImlwIjoiOjoxIiwiaWF0IjoxNTQyODI5NDY2fQ.AyLLbW_82tecgtzL-QvogkA0cGS5MnuU4X5jZ9bhTIY");
     this.router.navigate(["/cargar"]);
 
   }

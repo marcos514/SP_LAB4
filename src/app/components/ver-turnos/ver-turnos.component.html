@@ -1,21 +1,29 @@
 <div class="input">
-    <div>
-  <mat-grid-list cols="1" rowHeight="10px">
-    <mat-grid-tile class="mostrar2"
-        *ngFor="let turno of clienteArr"
-        [colspan]=1
-        [rowspan]=1
-        [style.background]="red">
-        {{turno.dia}} -- {{turno.hora}} -- {{turno.mail}} --
-    </mat-grid-tile>
-  </mat-grid-list>
+    <div id="content" #content class="midle">
+    <table matSort (matSortChange)="sortData($event)">
+        <tr>
+            <th mat-sort-header="dia">Dia</th>
+            <th mat-sort-header="hora">Hora</th>
+            <th mat-sort-header="patente">Patente</th>
+            <th mat-sort-header="mail">Mail</th>
+        </tr>
+        
+        <tr *ngFor="let dessert of mostrarArr">
+            <td>{{dessert.dia}}</td>
+            <td>{{dessert.hora}}</td>
+            <td>{{dessert.patente}}</td>
+            <td>{{dessert.mail}} </td>
+        </tr>
+    </table>
 </div>
 
-<div *ngIf="!tipo">
+<div *ngIf="tipo" class="input">
         <div class="example-button-row">
-            <button class="boton"mat-raised-button type="reset" style="width: 50%; background-color:#f57474;color:black" value="Reset" >Limpiar</button>
-            <button (click)="Logearse()" class="boton" mat-raised-button style="width: 50%; background-color:#70f6af;color:black">Aceptar</button>
-            <a href="/signup" mat-raised-button class="boton" style="width: 100%; background-color:#9cbefc;color:black" >Sign Up</a>
+            <mat-form-field style="width:50%">
+                <input type="text"  matInput placeholder="Mail buscar" name="mail" [(ngModel)]="mailbuscar" required>
+            </mat-form-field>
+            <button (click)="Filtrar()" class="boton" mat-raised-button style="width: 50%; background-color:#70f6af;color:black">Buscar</button>
+            <button (click)="downloadPDF()" class="boton" mat-raised-button style="width: 100%; background-color: crimson;color:black">Generar PDF</button>
         </div>
 
 </div>
