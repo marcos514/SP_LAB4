@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServerService } from "../../servicios/server.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {Sort} from '@angular/material';
-
+import * as jsPDF from "jspdf";
 
 export interface ClienteServ {
   dia: string;
@@ -78,8 +78,21 @@ export class VerTurnosComponent implements OnInit {
     }
 
   }
+  @ViewChild("content") content:ElementRef;
   downloadPDF(){
-    
+    let doc = new jsPDF();
+    let spacialElementHandler={
+      "#editor":function(element, renderer){
+        return true;
+      }
+
+    };
+    let content= this.content.nativeElement;
+    doc.fromHTML(content.innerHTML,20,20,{
+      "width": 500,
+      "elementHandlers": spacialElementHandler
+    });
+    doc.save("test.pdf");
   }
 
 }

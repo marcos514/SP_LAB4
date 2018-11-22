@@ -12,7 +12,7 @@ export class CambiarAdminComponent implements OnInit {
 
 
   ngOnInit() {
-    localStorage.setItem("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWlsIjoibWFyQGdtYWlsLmNvbSIsInRpcG8iOiJBZG1pbiIsIm5vbWJyZSI6Ik1hcmNvcyJ9.Z1-Zk_yKhDpfJgSDrYEjaNx1MYy5FNhqhupJyx_UO8A");
+    localStorage.setItem("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmY2MGMzM2E0YThkNTE2ZjgxZWIyYzAiLCJub21icmUiOiJNYXJjb3MiLCJ1c2VyIjoibWFyY29zQGdtYWlsLmNvbSIsInBhc3MiOiIxMjM0IiwidGlwbyI6IkFkbWluIiwiaXAiOiI6OjEiLCJpYXQiOjE1NDI4NTE2NjN9.0d9--W7HqKgprSO2a5ITvBweZcmYOnjDISglVrOU3jg");
     
     this.router.navigate(["/cargar"]);
 
