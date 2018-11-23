@@ -1,0 +1,36 @@
+<form >
+  <div class="midle">
+    <div  >
+    <h1 style="font-size:50px; margin: auto; width: 99%">Agregar Helado</h1>
+    </div>
+    <div class="input">
+        <mat-form-field class="fill">
+          <input type="text" matInput placeholder="Sabor" name="sabor" [(ngModel)]="sabor" required>
+        </mat-form-field>
+      </div>
+    <div class="input">
+      <mat-form-field class="fill">
+        <mat-select  placeholder="Tipo" name="tipo" [(value)]="tipo">
+            <mat-option value="crema">Crema</mat-option>
+            <mat-option value="agua">Agua</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <mat-form-field class="fill">
+        <input type="number" min="1" max="10000" matInput name="kilos" placeholder="Kilos" [(ngModel)]="kilos" required>
+      </mat-form-field>
+    </div>
+    <div class="input">
+        <div class="example-button-row">
+            <button class="boton"mat-raised-button type="reset" style="width: 50%; background-color:#f57474;color:black" value="Reset" >Limpiar</button>
+            <button (click)="Cargar()" class="boton" mat-raised-button style="width: 50%; background-color:#70f6af;color:black">Cargar</button>
+        </div>
+    </div>
+    <div>
+      <h1>
+        {{agrego}}
+      </h1>
+    </div>
+  </div>
+</form>

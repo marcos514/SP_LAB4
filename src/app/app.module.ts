@@ -26,6 +26,11 @@ import { DatosUsuarioComponent } from './components/user/datos-usuario/datos-usu
 import { NombreComponent } from './components/user/nombre/nombre.component';
 import { CambiarComponent } from './components/user/cambiar/cambiar.component';
 import { CambiarAdminComponent } from './components/user/cambiar-admin/cambiar-admin.component';
+import { HeladoAgregarComponent } from './PP/helado-agregar/helado-agregar.component';
+import { HeladoMostrarListaComponent } from './PP/helado-mostrar-lista/helado-mostrar-lista.component';
+import { HeladoMostrarInputComponent } from './PP/helado-mostrar-input/helado-mostrar-input.component';
+import { HeladoMostrarInputGenerarComponent } from './PP/helado-mostrar-input-generar/helado-mostrar-input-generar.component';
+import { HeladoFiltrarComponent } from './PP/helado-filtrar/helado-filtrar.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { CambiarAdminComponent } from './components/user/cambiar-admin/cambiar-a
     DatosUsuarioComponent,
     NombreComponent,
     CambiarComponent,
-    CambiarAdminComponent
+    CambiarAdminComponent,
+    HeladoAgregarComponent,
+    HeladoMostrarListaComponent,
+    HeladoMostrarInputComponent,
+    HeladoMostrarInputGenerarComponent,
+    HeladoFiltrarComponent
   ],
   imports: [
     BrowserModule,

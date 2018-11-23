@@ -1,0 +1,17 @@
+<div class="input" *ngIf="helados">
+        <div id="content" #content class="midle">
+        <table class="input" matSort (matSortChange)="sortData($event)">
+            <tr>
+                <th mat-sort-header="sabor">Sabor</th>
+                <th mat-sort-header="tipo">Tipo</th>
+                <th mat-sort-header="kilos">Kilos</th>
+            </tr>
+            
+            <tr *ngFor="let dessert of helados">
+                <td>{{dessert.sabor}}</td>
+                <td>{{dessert.tipo}}</td>
+                <td>{{dessert.kilos}}</td>
+            </tr>
+        </table>
+      </div>
+      </div>

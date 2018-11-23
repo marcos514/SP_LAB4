@@ -9,6 +9,9 @@ import { SacarTurnoComponent } from "../../components/sacar-turno/sacar-turno.co
 import { VerTurnosComponent } from "../../components/ver-turnos/ver-turnos.component";
 import { CambiarComponent } from "../../components/user/cambiar/cambiar.component";
 import { CambiarAdminComponent } from "../../components/user/cambiar-admin/cambiar-admin.component";
+import { HeladoAgregarComponent } from "../../PP/helado-agregar/helado-agregar.component";
+import { HeladoMostrarListaComponent } from "../../PP/helado-mostrar-lista/helado-mostrar-lista.component";
+import { HeladoMostrarInputGenerarComponent } from "../../PP/helado-mostrar-input-generar/helado-mostrar-input-generar.component";
 import { ConeccionService } from "../coneccion.service";
  
 const rutas : Routes =[
@@ -21,6 +24,9 @@ const rutas : Routes =[
   {path:"verTurno",component:VerTurnosComponent,canActivate:[ConeccionService]},
   {path:"cli",component:CambiarComponent},
   {path:"admin",component:CambiarAdminComponent},
+  {path:"agregar",component:HeladoAgregarComponent},
+  {path:"mostrarLista",component:HeladoMostrarListaComponent},
+  {path:"buscar",component:HeladoMostrarInputGenerarComponent},
 ];
 
 @NgModule({

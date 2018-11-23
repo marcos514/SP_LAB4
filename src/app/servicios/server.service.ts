@@ -69,4 +69,26 @@ export class ServerService {
   {
     return this.http.get("./../../assets/Api_Juegos/puntuacion",CONFIG);
   }
+
+  
+  public AgregarHelado(tipo, sabor, kilos)
+  {
+    return this.http.post("http://192.168.2.62:3003/helados",
+    {
+        helado:{
+          sabor:sabor,
+          kilos:kilos,
+          tipo:tipo,
+        }
+    });
+  }
+
+  public TomarHelado()
+  {
+    return this.http.get("http://192.168.2.62:3003/helados");
+  }
+  public BorrarHelado(id)
+  {
+    return this.http.delete("http://192.168.2.62:3003/helados/"+id);
+  }
 }

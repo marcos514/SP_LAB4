@@ -1,0 +1,28 @@
+<div class="input">
+  <div id="content" #content class="midle">
+  <table class="input" matSort (matSortChange)="sortData($event)">
+      <tr>
+          <th mat-sort-header="sabor">Sabor</th>
+          <th mat-sort-header="tipo">Tipo</th>
+          <th mat-sort-header="kilos">Kilos</th>
+          <th mat-sort-header="el">Eliminar</th>
+      </tr>
+      
+      <tr *ngFor="let dessert of mostrarArr">
+          <td>{{dessert.sabor}}</td>
+          <td>{{dessert.tipo}}</td>
+          <td>{{dessert.kilos}}</td>
+          <td><button (click)="Borrar(dessert.id)" class="boton" mat-raised-button style="width: 100%; background-color: crimson;color:black">Borrar</button></td>
+      </tr>
+  </table>
+      <div class="example-button-row">
+          <app-helado-filtrar [helado]="heladoArr"(error)="Error($event)" (encontrado)="Encontrado($event)"></app-helado-filtrar>
+          <button (click)="downloadPDF()" class="boton" mat-raised-button style="width: 100%; background-color:rgb(223, 179, 86);color:black">Generar PDF</button>
+          <div>
+            <h1>
+              {{error}}
+            </h1>
+          </div>
+      </div>
+</div>
+</div>

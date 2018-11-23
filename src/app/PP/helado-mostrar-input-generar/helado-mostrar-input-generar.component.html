@@ -1,0 +1,12 @@
+<div class="input">
+  <div id="content" #content class="midle">
+      <mat-form-field style="width:50%">
+          <input type="text"  matInput placeholder="Sabor Helado" name="mail" [(ngModel)]="saborBuscar" required>
+      </mat-form-field>
+      <button (click)="Filtrar()" class="boton" mat-raised-button style="width: 50%; background-color:#70f6af;color:black">Buscar</button>
+      
+      <div class="example-button-row">
+          <app-helado-mostrar-input [inHelado]="ret"></app-helado-mostrar-input>
+      </div>
+</div>
+</div>
