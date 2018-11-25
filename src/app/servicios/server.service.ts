@@ -39,7 +39,7 @@ export class ServerService {
           color:color,
           kilometros:kilometros,
           tipo:tipo,
-          usuario:usuario,
+          user:usuario,
         }
     },CONFIG);
   }

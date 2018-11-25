@@ -26,7 +26,7 @@ export class AutoComponent implements OnInit {
     if(!this.marca||!this.patente||!this.color){
       return 0;
     }
-    /*this.http.AgregarAuto(this.patente,this.marca,this.color,this.kilometros,this.tipo,this.usuario).subscribe(data=>{
+    this.http.AgregarAuto(this.patente,this.marca,this.color,this.kilometros,this.tipo,this.usuario).subscribe(data=>{
       console.log(data);
       this.router.navigate(["/cargar"]);
       this.ngOnInit();
@@ -34,14 +34,14 @@ export class AutoComponent implements OnInit {
     },
     err=>{console.log(err);
     this.agrego="Error"})
-*/
+
       console.log(this);
   }
 
   ngOnInit() {
     if(localStorage.getItem("Token")){
       let token = this.helper.decodeToken(localStorage.getItem("Token"));
-      this.usuario=token.usuario
+      this.usuario=token.user
     }
     this.agrego=""
     this.patente="";
