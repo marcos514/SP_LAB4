@@ -11,7 +11,7 @@ export class ServerService {
   constructor(private http:HttpClient) { }
   public LogIn(email,pass)
   {
-    return this.http.post("http://192.168.2.42:3003/login",{cliente:{
+    return this.http.post("http://localhost:3003/login",{cliente:{
       user:email,
       pass:pass,
     }});
@@ -19,7 +19,7 @@ export class ServerService {
 
   public SignUp(nombre,email,clave,tipo)
   {
-    return this.http.post("http://192.168.2.42:3003/clientes",{cliente:
+    return this.http.post("http://localhost:3003/clientes",{cliente:
     {
       nombre:nombre,
       user:email,
@@ -31,7 +31,7 @@ export class ServerService {
 
   public AgregarAuto(patente,marca,color,kilometros,tipo,usuario)
   {
-    return this.http.post("http://192.168.2.42:3003/auto",
+    return this.http.post("http://localhost:3003/auto",
     {
         auto:{
           patente:patente,
@@ -43,13 +43,14 @@ export class ServerService {
         }
     },CONFIG);
   }
-  public AgregarTurno(dia,horario,mail)
+  public AgregarTurno(dia,horario,patente,mail)
   {
-    return this.http.post("http://192.168.2.42:3003/turnos",
+    return this.http.post("http://localhost:3003/turnos",
     {
       turno:{
           dia:dia,
           horario:horario,
+          patente:patente,
           mail:mail
         }
     },CONFIG);
@@ -57,12 +58,12 @@ export class ServerService {
 
   public TomarTurno()
   {
-    return this.http.get("http://192.168.2.42:3003/turnos",CONFIG);
+    return this.http.get("http://localhost:3003/turnos",CONFIG);
   }
 
   public GetAutos()
   {
-    return this.http.get("http://192.168.2.42:3003/autos",CONFIG);
+    return this.http.get("http://localhost:3003/autos",CONFIG);
   }
   public TomarPuntuacion()
   {

@@ -16,6 +16,7 @@ export class AutoComponent implements OnInit {
   kilometros:Number;
   usuario="";
   agrego="";
+  autos=[]
   constructor(private http:ServerService,private router:Router) { }
   helper=new JwtHelperService();
 
@@ -39,6 +40,9 @@ export class AutoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.http.GetAutos().subscribe(data=>{
+      console.log(data);
+    })
     if(localStorage.getItem("Token")){
       let token = this.helper.decodeToken(localStorage.getItem("Token"));
       this.usuario=token.user
