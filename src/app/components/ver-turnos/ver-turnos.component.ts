@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ServerService } from "../../servicios/server.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {Sort} from '@angular/material';
-import * as jsPDF from "jspdf";
 
 export interface ClienteServ {
   dia: string;
