@@ -29,8 +29,8 @@ export class DatosUsuarioComponent implements OnInit {
 
     let usuario=this.helper.decodeToken(this.token);
     this.nombre =usuario.nombre;
-    this.tipo =usuario.tipo;
-    this.mail =usuario.user;
+    this.tipo =usuario.perfil;
+    this.mail =usuario.user; 
   }
   else{
     this.nombre ="";

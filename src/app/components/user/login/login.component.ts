@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.http.LogIn(this.email,this.password).subscribe(data=>{
           console.log(data);
           localStorage.setItem("Token",data["token"]);
-          this.router.navigate(["/cargar"]);
+          this.router.navigate(["/agregarServicio"]);
 
 
         },

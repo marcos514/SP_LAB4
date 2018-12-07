@@ -1,0 +1,15 @@
+<div class="input" *ngIf="servidores">
+    <div id="content" #content class="midle">
+    <table class="input" matSort (matSortChange)="sortData($event)">
+        <tr>
+            <th mat-sort-header="mail">Mail</th>
+            <th mat-sort-header="cantidad">Cantidad servidores</th>
+        </tr>
+        
+        <tr *ngFor="let servidor of servidores">
+            <td>{{servidor.mail}}</td>
+            <td>{{servidor.servidores}}</td>
+        </tr>
+    </table>
+  </div>
+  </div>

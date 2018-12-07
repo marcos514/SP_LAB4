@@ -13,7 +13,8 @@ export class SignupComponent implements OnInit {
   apellido="";
   nombre="";
   password="";
-  tipo="Cliente";
+  tipo="Normal";
+  sexo ="hombre";
   constructor(public snackBar: MatSnackBar,private http:ServerService,private router:Router) { }
 
   ngOnInit() {
@@ -37,7 +38,8 @@ export class SignupComponent implements OnInit {
       return 0;
     }
 
-    this.http.SignUp(this.nombre,this.email,this.password,this.tipo).subscribe(data=>{
+    this.http.SignUp(this.nombre,this.email,this.password,this.tipo,this.sexo).subscribe(data=>{
+      console.log(data);
       this.router.navigate(["/login"]);
     },
     err=>{console.log(err);});

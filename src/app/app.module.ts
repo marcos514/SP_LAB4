@@ -31,6 +31,18 @@ import { HeladoMostrarListaComponent } from './PP/helado-mostrar-lista/helado-mo
 import { HeladoMostrarInputComponent } from './PP/helado-mostrar-input/helado-mostrar-input.component';
 import { HeladoMostrarInputGenerarComponent } from './PP/helado-mostrar-input-generar/helado-mostrar-input-generar.component';
 import { HeladoFiltrarComponent } from './PP/helado-filtrar/helado-filtrar.component';
+import { CambiarProfecionalComponent } from './components/user/cambiar-profecional/cambiar-profecional.component';
+import { CambiarNormalComponent } from './components/user/cambiar-normal/cambiar-normal.component';
+import { CambiarFreeComponent } from './components/user/cambiar-free/cambiar-free.component';
+import { AgregarServicioComponent } from './SP/agregar-servicio/agregar-servicio.component';
+import { AreaClientesComponent } from './SP/area-clientes/area-clientes.component';
+import { MostrarServidoresComponent } from './SP/mostrar-servidores/mostrar-servidores.component';
+import { PipeCambioPipe } from './SP/pipe-cambio.pipe';
+import { PipeMBPipe } from './SP/pipe-mb.pipe';
+import { AgregarClienteComponent } from './SP/agregar-cliente/agregar-cliente.component';
+import { CantidadServidoresComponent } from './SP/cantidad-servidores/cantidad-servidores.component';
+import { CantidadMBComponent } from './SP/cantidad-mb/cantidad-mb.component';
+import { CantidadMB300Component } from './SP/cantidad-mb300/cantidad-mb300.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +72,19 @@ import { HeladoFiltrarComponent } from './PP/helado-filtrar/helado-filtrar.compo
     HeladoMostrarListaComponent,
     HeladoMostrarInputComponent,
     HeladoMostrarInputGenerarComponent,
-    HeladoFiltrarComponent
+    HeladoFiltrarComponent,
+    CambiarProfecionalComponent,
+    CambiarNormalComponent,
+    CambiarFreeComponent,
+    AgregarServicioComponent,
+    AreaClientesComponent,
+    MostrarServidoresComponent,
+    PipeCambioPipe,
+    PipeMBPipe,
+    AgregarClienteComponent,
+    CantidadServidoresComponent,
+    CantidadMBComponent,
+    CantidadMB300Component
   ],
   imports: [
     BrowserModule,

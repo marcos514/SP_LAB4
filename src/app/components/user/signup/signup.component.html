@@ -16,11 +16,20 @@
     <div class="input">
       <mat-form-field class="fill">
         <mat-select [(value)]="tipo">
-            <mat-option value="Admin">Admin</mat-option>
-            <mat-option value="Cliente">Cliente</mat-option>
+            <mat-option value="Profesional">Profesional</mat-option>
+            <mat-option value="Normal">Normal</mat-option>
+            <mat-option value="Free">Free</mat-option>
           </mat-select>
       </mat-form-field>
     </div>
+    <div class="input">
+        <mat-form-field class="fill">
+          <mat-select [(value)]="sexo">
+              <mat-option value="hombre">Masculino</mat-option>
+              <mat-option value="mujer">Femenino</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
     <div class="input">
       <mat-form-field class="fill">
         <input type="password" matInput placeholder="Clave" name="pass"[(ngModel)]="password" required>

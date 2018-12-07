@@ -11,20 +11,21 @@ export class ServerService {
   constructor(private http:HttpClient) { }
   public LogIn(email,pass)
   {
-    return this.http.post("http://localhost:3003/login",{cliente:{
+    return this.http.post("http://192.168.2.45:3003/login",{cliente:{
       user:email,
       pass:pass,
     }});
   }
 
-  public SignUp(nombre,email,clave,tipo)
+  public SignUp(nombre,email,clave,tipo,sexo)
   {
-    return this.http.post("http://localhost:3003/clientes",{cliente:
+    return this.http.post("http://192.168.2.45:3003/clientes",{cliente:
     {
       nombre:nombre,
       user:email,
       pass:clave,
-      tipo:tipo
+      perfil:tipo,
+      sexo:sexo
 
     }});
   }
@@ -83,12 +84,20 @@ export class ServerService {
     });
   }
 
-  public TomarHelado()
+
+  public AgregarServicioWeb(nombre,MB,precio,mail)
   {
-    return this.http.get("http://192.168.2.62:3003/helados");
+    return this.http.post("http://192.168.2.45:3003/col",{coleccion:"servidor",
+    data:
+    {
+      nombre:nombre,
+      mb:MB,
+      precio:precio,
+      mail:mail
+    }}, CONFIG);
   }
-  public BorrarHelado(id)
+  public TomarServidores()
   {
-    return this.http.delete("http://192.168.2.62:3003/helados/"+id);
+    return this.http.get("http://192.168.2.45:3003/col/servidor",CONFIG);
   }
 }

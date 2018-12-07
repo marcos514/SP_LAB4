@@ -18,18 +18,7 @@ export class HeladoMostrarInputGenerarComponent implements OnInit {
   constructor(private http:ServerService) { }
 
   ngOnInit() {
-    this.helados=[];
-    this.http.TomarHelado().subscribe(data=>{
-      console.log(data)
-      for (let index = 0; index < data["rta"].length; index++) {
-        let tipo:string=data["rta"][index].tipo;
-        let kilos:string=data["rta"][index].kilos;
-        let sabor:string=data["rta"][index].sabor;
-        this.helados.push({tipo: tipo,sabor:sabor ,kilos:kilos});
-        
-      }
-    },
-    err=>{console.log(err);})
+    
   }
 
   Filtrar()

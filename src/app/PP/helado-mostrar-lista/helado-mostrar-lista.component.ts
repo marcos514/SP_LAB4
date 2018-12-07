@@ -23,27 +23,9 @@ export class HeladoMostrarListaComponent implements OnInit {
   error="";
   ngOnInit() {
     this.heladoArr=[];
-    this.http.TomarHelado().subscribe(data=>{
-      console.log(data)
-      for (let index = 0; index < data["rta"].length; index++) {
-        let tipo:string=data["rta"][index].tipo;
-        let kilos:string=data["rta"][index].kilos;
-        let sabor:string=data["rta"][index].sabor;
-        let id:string=data["rta"][index]._id;
-        this.heladoArr.push({tipo: tipo,sabor:sabor ,kilos:kilos, id:id});
-        
-      }
-      this.mostrarArr=this.heladoArr;
-    },
-    err=>{console.log(err);})
+    
   }
   Borrar(id){
-    this.http.BorrarHelado(id).subscribe(data=>{
-      console.log(data);
-      this.error="Elimino"
-      this.ngOnInit();
-    },
-    err=>{console.log(err);})
   }
 
   sortData(sort: Sort) {
